@@ -1,0 +1,486 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+body {
+  margin: 0;
+}
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+::-moz-selection {
+  background-color: SteelBlue;
+  color: #fff;
+}
+
+::selection {
+  background-color: SteelBlue;
+  color: #fff;
+}
+
+.frontend-search-box .mdl-textfield__input {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.frontend-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.frontend-fab {
+  position: absolute;
+  right: 20%;
+  bottom: -26px;
+  z-index: 3;
+  background: #64ffda !important;
+  color: black !important;
+}
+
+.frontend-mobile-title {
+  display: none !important;
+}
+
+
+.frontend-logo-image {
+  /*max-height: 28px;*/
+  max-width: 140px;
+}
+
+
+.frontend-header {
+  overflow: visible;
+  background-color: white;
+}
+
+  .frontend-header .material-icons {
+    color: #767777 !important;
+  }
+
+  .frontend-header .mdl-layout__drawer-button {
+    background: transparent;
+    color: #767777;
+  }
+
+  .frontend-header .mdl-navigation__link {
+    color: #757575;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .frontend-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: rtl;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    width: 500px;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .frontend-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 800px;
+  }
+
+  .frontend-search-box.is-focused ~ .frontend-navigation-container {
+    opacity: 0;
+    width: 100px;
+  }
+
+
+  .frontend-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+  }
+
+    .frontend-navigation .mdl-navigation__link:hover {
+      border-bottom: 4px solid SteelBlue;
+    }
+
+  .frontend-search-box {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .frontend-more-button {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+
+.frontend-drawer {
+  border-right: none;
+}
+
+  .frontend-drawer-separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+  }
+
+  .frontend-drawer .mdl-navigation__link.mdl-navigation__link {
+    font-size: 14px;
+    color: #757575;
+  }
+
+  .frontend-drawer span.mdl-navigation__link.mdl-navigation__link {
+    color: SteelBlue;
+  }
+
+  .frontend-drawer .mdl-layout-title {
+    position: relative;
+    background: Silver;
+    height: 160px;
+  }
+
+    .frontend-drawer .frontend-logo-image {
+      position: absolute;
+      bottom: 16px;
+    }
+
+.frontend-be-together-section {
+  position: relative;
+  height: 600px;
+  width: auto;
+  background-color: #f3f3f3;
+  background-size: cover;
+}
+
+.frontend-font {
+  font-family: 'And Black', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 300;
+}
+
+.frontend-slogan {
+  font-size: 60px;
+  padding-top: 50px;
+}
+
+.frontend-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
+
+.frontend-create-character {
+  font-size: 21px;
+  padding-top: 400px;
+}
+
+  .frontend-create-character a {
+    text-decoration: none;
+    color: #767777;
+    font-weight: 300;
+  }
+
+.frontend-screens {
+  text-align: right;
+  width: 95%;
+  white-space: nowrap;
+  overflow-x: auto;
+  margin: 20px auto;
+}
+
+.frontend-screen {
+  text-align: center;
+  display: inline-block;
+}
+
+.frontend-image-link {
+  display: block;
+  height: 300px;
+  text-decoration: none;
+}
+
+.frontend-screen .frontend-screen-image {
+  max-height: 100%;
+}
+
+.frontend-screen .frontend-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 2;
+}
+
+
+.frontend-wear-section {
+  position: relative;
+  background: url('../img/front/carbon.jpg') center top no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+
+.frontend-wear-band {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #37474f;
+}
+
+.frontend-wear-band-text {
+  max-width: 800px;
+  margin: auto;
+  padding: 24px;
+  text-align: left;
+  color: white;
+}
+
+  .frontend-wear-band-text p {
+    padding-top: 8px;
+  }
+
+.frontend-link {
+  text-decoration: none;
+  color: SteelBlue !important;
+}
+
+  .frontend-link:hover {
+    color: #7cb342 !important;
+  }
+
+  .frontend-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.frontend-alt-link {
+  text-decoration: none;
+  color: #64ffda !important;
+  font-size: 16px;
+}
+
+  .frontend-alt-link:hover {
+    color: #00bfa5 !important;
+  }
+
+  .frontend-alt-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.frontend-customized-section {
+  text-align: center;
+}
+
+.frontend-customized-section-text, .frontend-customized-section-image {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  padding: 80px 16px 0 16px;
+  vertical-align: top;
+}
+
+  .frontend-customized-section-text p {
+    padding-top: 16px;
+  }
+
+  .frontend-customized-section-image img {
+    width: 100%;
+  }
+
+.frontend-more-section {
+  padding: 80px 0;
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .frontend-more-section .frontend-section-title {
+    margin-left: 12px;
+    padding-bottom: 24px;
+  }
+
+.frontend-card-container>div{
+  margin: 0 auto;
+}
+
+  .frontend-card-container .mdl-card__media {
+    overflow: hidden;
+    background: transparent;
+  }
+
+    .frontend-card-container .mdl-card__media img {
+      width: 100%;
+    }
+
+  .frontend-card-container .mdl-card__title {
+    background: transparent;
+    height: auto;
+  }
+
+  .frontend-card-container .mdl-card__title-text {
+    color: black;
+    height: auto;
+  }
+
+  .frontend-card-container .mdl-card__supporting-text {
+    height: auto;
+    color: black;
+    padding-bottom: 48px;
+    text-align: justify;
+  }
+
+  .frontend-card-container .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .frontend-card-container .mdl-card__actions a {
+    border-top: none;
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+.frontend-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+  .frontend-footer a:hover {
+    color: SteelBlue;
+  }
+
+  .frontend-footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+  }
+
+  .frontend-footer .mdl-mega-footer--middle-section::after {
+    border-bottom: none;
+  }
+
+  .frontend-footer .mdl-mega-footer--bottom-section {
+    position: relative;
+  }
+
+  .frontend-footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+  }
+
+  .frontend-footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+.frontend-link-menu:hover {
+  cursor: pointer;
+}
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .frontend-navigation-container {
+    display: none;
+  }
+
+  .frontend-title {
+    display: none !important;
+  }
+
+  .frontend-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .frontend-customized-section-text{
+    width: 90%;
+  }
+
+  .frontend-search-box.is-focused ~ .frontend-mobile-title {
+    opacity: 0;
+  }
+
+  .frontend-more-button {
+    display: none;
+  }
+
+  .frontend-search-box.is-focused {
+    width: calc(100% - 48px);
+  }
+
+  .frontend-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+
+  .frontend-be-together-section {
+    height: 500px;
+  }
+
+  .frontend-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 24px;
+  }
+
+  .frontend-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+  }
+
+  .frontend-create-character {
+    padding-top: 200px;
+    font-size: 16px;
+  }
+
+  .frontend-create-character img {
+    height: 12px;
+  }
+
+  .frontend-fab {
+    display: none;
+  }
+
+  .frontend-wear-band-text {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .frontend-footer .mdl-mega-footer--bottom-section {
+    display: none;
+  }
+}
