@@ -7,6 +7,19 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
+/*
+Cuentas
+	Gmail
+		acarproy
+		acarproy123
+	Github
+		acarproy
+		acarproy123
+	Heroku
+		acarproy@gmail.com
+		acarproy123
+*/
+
 $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
 );
