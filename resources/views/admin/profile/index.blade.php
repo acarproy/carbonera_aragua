@@ -21,10 +21,13 @@
 
         <ul class="list-group list-group-unbordered">
           <li class="list-group-item">
-            <b>{{ trans('admin/users.form.name.title') }}</b> <a class="pull-right">{{ $user->name ?: '-' }}</a>
+            <b>Nombre:</b> <a class="pull-right">{{ $user->name ?: '-' }}</a>
           </li>
           <li class="list-group-item">
-            <b>{{ trans('admin/users.form.phone.title') }}</b> <a class="pull-right">{{ $user->phone ?: '-' }}</a>
+            <b>Apellido:</b> <a class="pull-right">{{ $user->last ?: '-' }}</a>
+          </li>
+          <li class="list-group-item">
+            <b>Cédula:</b> <a class="pull-right">{{ $user->ci ?: '-' }}</a>
           </li>
         </ul>
 
@@ -50,15 +53,21 @@
               <b>{{ trans('admin/users.form.username.title') }}</b><br><a class="pull">{{ ($user->username) ?: '-' }}</a>
             </div>
             <div class="col-md-4" style="margin:10px auto;">
-              <b>{{ trans('admin/users.form.name.title') }}</b><br><a class="pull">{{ ($user->name) ?: '-' }}</a>
-            </div>
-            <div class="col-md-4" style="margin:10px auto;">
               <b>{{ trans('admin/users.form.email.title') }}</b><br>
               <a class="pull">{{ $user->email ?: '-' }}</a>
             </div>
             <div class="col-md-4" style="margin:10px auto;">
               <b>{{ trans('admin/users.form.phone.title') }}</b><br>
               <a class="pull">{{ $user->phone ?: '-' }}</a>
+            </div>
+            <div class="col-md-4" style="margin:10px auto;">
+              <b>Nombre:</b><br><a class="pull">{{ ($user->name) ?: '-' }}</a>
+            </div>
+            <div class="col-md-4" style="margin:10px auto;">
+              <b>Apellido:</b><br><a class="pull">{{ ($user->last) ?: '-' }}</a>
+            </div>
+            <div class="col-md-4" style="margin:10px auto;">
+              <b>Cédula:</b><br><a class="pull">{{ ($user->ci) ?: '-' }}</a>
             </div>
           </div>
         </div><!-- /.tab-pane -->

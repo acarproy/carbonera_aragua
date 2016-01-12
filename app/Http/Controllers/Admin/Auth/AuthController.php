@@ -159,71 +159,24 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        //Create user auth except admin role
-        $socialdata = Session::get('socialdata'); 
-        $provider   = Session::get('provider');
-
         $DataUser = [
-            'name'            => $data['name'],                
-            'email'           => $data['email'],
             'username'        => $data['username'],
             'password'        => bcrypt($data['password']),
+            'name'            => $data['name'],
+            'last'            => $data['last'],
+            'ci'              => $data['ci'],
+            'email'           => $data['email'],
+            'phone'           => $data['phone'],
+            'activation_code' => str_random(30),
         ];
-
-        //Add social avatar to the user
-        if (isset($socialdata->avatar)){
-            $DataUser['avatar'] = $socialdata->avatar;
-            $DataUser['active'] = 1;
-        } else {
-            //Activation code is required
-            $DataUser['activation_code'] = str_random(30);
-        }
 
         //User create
         $User = User::create($DataUser);
 
         //Client role by default
-        $User->assignRole(3);            
+        $User->assignRole(1);
 
-        //Save social data if is present
-        if ($socialdata and $provider){
-            SocialData::create([
-                'user_id'     => $User->id,
-                'provider'    => $provider,
-                'social_data' => serialize($socialdata)
-            ]);
-        }
-        
         return $User;
-    }
-
-    /**
-     * Redirect the user to the social network authentication page.
-     *
-     * @param string $provider
-     * @return Response
-     */
-    public function getSocialAuth($provider=null)
-    {
-       if(!config("services.$provider")) abort('404'); //just to handle providers that doesn't exist
-       return $this->socialite->with($provider)->redirect();
-    }
-
-    /**
-     * Obtain the user information from the social network.
-     *
-     * @param string $provider
-     * @return Response
-     */
-    public function getSocialAuthCallback($provider=null)
-    {
-        if(!$user = $this->socialite->with($provider)->user()){
-            return trans('register.social_callback_error');
-        }
-
-        Session::flash('socialdata', $user);
-        Session::flash('provider', $provider);
-        return redirect('register');
     }
 
     public function confirmRegistration($activation_code)

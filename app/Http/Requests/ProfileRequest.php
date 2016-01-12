@@ -27,7 +27,10 @@ class ProfileRequest extends Request
 
         return [
             'name'       => 'required|max:255',
+            'last'       => 'required|max:255',
+            'ci'         => 'required|max:12|min:8',
             'email'      => 'required|max:255|email|unique:users,email,'.$user_id,
+            'phone'      => 'required|max:11|min:11',
         ];
     }
 }

@@ -25,11 +25,13 @@ class RegistrationRequest extends Request
     {
         return [
             'name'                 => 'required|max:255',
+            'last'                 => 'required|max:255',
+            'ci'                   => 'required|max:12|min:8',
             'email'                => 'required|email|max:255|unique:users,email',
+            'phone'                => 'required|max:11|min:11',
             'username'             => 'required|max:255|alpha_dash|unique:users,username',
             'password'             => 'required|confirmed|min:6',
             'agree'                => 'required',
-            //'g-recaptcha-response' => 'required|captcha'
         ];
     }
 }

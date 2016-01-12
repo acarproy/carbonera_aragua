@@ -19,8 +19,7 @@ class Permission extends Model
      *
      * @var array
      */
-    protected $fillable = ['permission_title','permission_slug','permission_description'];
-
+    protected $fillable = ['permission_title','permission_slug','permission_description','menu_show','menu_module','menu_module_icon','menu_item','menu_item_route'];
     /**
     * Timestamps fields settings, use true if you need updated_at and create_at
     * @var string

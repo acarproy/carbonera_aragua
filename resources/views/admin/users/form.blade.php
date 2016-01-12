@@ -8,8 +8,12 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					{!! Form::label('name', trans('admin/users.form.name.title'), ['class' => 'control-label']) !!}
-					{!! Form::text('name', null, ['class' => 'form-control','placeholder' => trans('admin/users.form.name.placeholder')]) !!}
+					{!! Form::label('username', trans('admin/users.form.username.title'), ['class' => 'control-label']) !!}
+					{!! Form::text('username', null, ['class' => 'form-control','placeholder' => trans('admin/users.form.username.placeholder'), isset($user->username)?'readonly':'']) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('password', trans('admin/users.form.password.title'), ['class' => 'control-label']) !!}
+					{!! Form::password('password', ['class' => 'form-control','placeholder' => trans('admin/users.form.password.placeholder')]) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('avatar', trans('admin/users.form.avatar'), ['class' => 'control-label']) !!}
@@ -28,8 +32,16 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					{!! Form::label('username', trans('admin/users.form.username.title'), ['class' => 'control-label']) !!}
-					{!! Form::text('username', null, ['class' => 'form-control','placeholder' => trans('admin/users.form.username.placeholder'), isset($user->username)?'readonly':'']) !!}
+					{!! Form::label('name', 'Nombre:', ['class' => 'control-label']) !!}
+					{!! Form::text('name', null, ['class' => 'form-control','placeholder' => 'Ingrese un nombre']) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('last', 'Apellido:', ['class' => 'control-label']) !!}
+					{!! Form::text('last', null, ['class' => 'form-control','placeholder' => 'Ingrese un apellido']) !!}
+				</div>
+				<div class="form-group">
+					{!! Form::label('ci', 'Cédula:', ['class' => 'control-label']) !!}
+					{!! Form::text('ci', null, ['class' => 'form-control','placeholder' => 'Ingrese un cédula']) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('email', trans('admin/users.form.email.title'), ['class' => 'control-label']) !!}
@@ -39,10 +51,6 @@
 					{!! Form::label('phone', trans('admin/users.form.phone.title'), ['class' => 'control-label']) !!}
 					{!! Form::text('phone', null, ['class' => 'form-control','placeholder' => trans('admin/users.form.phone.placeholder')]) !!}
 				</div>
-				<div class="form-group">
-					{!! Form::label('password', trans('admin/users.form.password.title'), ['class' => 'control-label']) !!}
-					{!! Form::password('password', ['class' => 'form-control','placeholder' => trans('admin/users.form.password.placeholder')]) !!}
-				</div>				
 			</div>
 		</div>
 		<div class="row">

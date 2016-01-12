@@ -50,8 +50,11 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $input = $request->all();        
-        $user  = User::create($input); //Create user
+        $input = $request->all();
+
+        $input['password'] = bcrypt($input['password']);
+
+        $user  = User::create($input);
         
         //Assign roles to user
         if (isset($input['roles'])){
@@ -63,8 +66,8 @@ class UserController extends Controller
             $avatar_path = $this->avatar_upload($input['avatar'],uniqid());
             if ($avatar_path){
                 //Updating picture path
-                $user->update(['avatar'=>url($avatar_path)]);    
-            }            
+                $user->update(['avatar'=>url($avatar_path)]);
+            }
         }
         Session::flash('flash_message', trans('admin/users.form.create_confirm'));
         return redirect()->back();

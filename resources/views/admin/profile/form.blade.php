@@ -11,20 +11,32 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									{!! Form::label('name', trans('admin/users.form.name.title'), ['class' => 'control-label']) !!}
-									{!! Form::text('name', null, ['class' => 'form-control','placeholder' => trans('admin/users.form.name.placeholder')]) !!}
+									{!! Form::label('name', 'Nombre:', ['class' => 'control-label']) !!}
+									{!! Form::text('name', null, ['class' => 'form-control','placeholder' => 'Ingrese su nombre']) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									{!! Form::label('email', trans('admin/users.form.email.title'), ['class' => 'control-label']) !!}
-									{!! Form::email('email', null, ['class' => 'form-control','placeholder' => trans('admin/users.form.email.placeholder')]) !!}
+									{!! Form::label('last', 'Apellido:', ['class' => 'control-label']) !!}
+									{!! Form::text('last', null, ['class' => 'form-control','placeholder' => 'Ingrese su apellido']) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									{!! Form::label('phone', trans('admin/users.form.phone.title'), ['class' => 'control-label']) !!}
-									{!! Form::text('phone', null, ['class' => 'form-control','placeholder' => trans('admin/users.form.phone.placeholder')]) !!}
+									{!! Form::label('ci', 'Cédula:', ['class' => 'control-label']) !!}
+									{!! Form::text('ci', null, ['class' => 'form-control','placeholder' => 'Ingrese su cédula']) !!}
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									{!! Form::label('email', 'Correo Electrónico:', ['class' => 'control-label']) !!}
+									{!! Form::email('email', null, ['class' => 'form-control','Ingrese su correo electrónico']) !!}
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									{!! Form::label('phone', 'Teléfono:', ['class' => 'control-label']) !!}
+									{!! Form::text('phone', null, ['class' => 'form-control','Ingrese su teléfono']) !!}
 								</div>
 							</div>
 						</div>

@@ -20,6 +20,33 @@
 	</div>
 
 	<div class="row">
+		<div class="text-center">
+			<h2 class="page-header">
+				Mostrar en menú
+				{!! Form::checkbox('menu_show', '1', null, ['class' => 'toggle_button','data-on-text' => 'SI','data-off-text' => 'NO']) !!}
+			</h2>
+		</div>
+		<div class="col-md-12" id="menu_ops">
+			<div class="form-group">
+				{!! Form::label('menu_module', 'Nombre del modulo', ['class' => 'control-label']) !!}
+				{!! Form::text('menu_module', null, ['class' => 'form-control','placeholder' => 'Ingrese el nombre del modulo']) !!}
+			</div>
+			<div class="form-group">
+				{!! Form::label('menu_module_icon', 'Icono del modulo', ['class' => 'control-label']) !!}
+				{!! Form::text('menu_module_icon', null, ['class' => 'form-control','placeholder' => 'Ingrese el icono del modulo']) !!}
+			</div>
+			<div class="form-group">
+				{!! Form::label('menu_item', 'Nombre del item', ['class' => 'control-label']) !!}
+				{!! Form::text('menu_item', null, ['class' => 'form-control','placeholder' => 'Ingrese el nombre del item']) !!}
+			</div>
+			<div class="form-group">
+				{!! Form::label('menu_item_route', 'Ruta del item', ['class' => 'control-label']) !!}
+				{!! Form::text('menu_item_route', null, ['class' => 'form-control','placeholder' => 'Ingrese la ruta del item']) !!}
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="text-center"><h2 class="page-header">{{trans('admin/permissions.form.assign_roles_section')}}</h2></div>
     	<div class="col-xs-5">
     		{!! Form::select('roles_list[]', $list_roles, null, ['id' => 'search', 'class' => 'form-control', 'size' => '8', 'multiple' => 'multiple']) !!}

@@ -47,6 +47,16 @@ class PermissionController extends Controller
     public function store(PermissionRequest $request)
     {
         $input = $request->all();
+
+        //valores de menu
+        if (!isset($input['menu_show'])) {
+            $input['menu_show']        = 0;
+            $input['menu_module']      = '';
+            $input['menu_module_icon'] = '';
+            $input['menu_item']        = '';
+            $input['menu_item_route']  = '';
+        }
+
         $permission = Permission::create($input);
 
         //Assign permissions to roles
@@ -104,6 +114,16 @@ class PermissionController extends Controller
     {
         $input = $request->all();
         $permission = Permission::find($id);
+
+        //valores de menu
+        if (!isset($input['menu_show'])) {
+            $input['menu_show']        = 0;
+            $input['menu_module']      = '';
+            $input['menu_module_icon'] = '';
+            $input['menu_item']        = '';
+            $input['menu_item_route']  = '';
+        }
+
         $permission->update($input);
 
         //Assign permissions to roles

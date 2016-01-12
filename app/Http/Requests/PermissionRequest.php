@@ -27,9 +27,13 @@ class PermissionRequest extends Request
         $permission_id = ($this->method() == 'PUT' ? $this->route()->getParameter('permissions') : 'NULL');
 
         return [
-            'permission_title' => 'required',
-            'permission_slug' => 'required|unique:permissions,permission_slug,'.$permission_id,
-            'permission_description' => 'required'
+            'permission_title'       => 'required',
+            'permission_slug'        => 'required|unique:permissions,permission_slug,'.$permission_id,
+            'permission_description' => 'required',
+            'menu_module'            => 'required_if:menu_show,1',
+            'menu_module_icon'       => 'required_if:menu_show,1',
+            'menu_item'              => 'required_if:menu_show,1',
+            'menu_item_route'        => 'required_if:menu_show,1'
         ];
     }
 }

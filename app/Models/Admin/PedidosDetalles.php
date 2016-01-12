@@ -3,23 +3,24 @@
 namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Admin\Pedidos;
+use App\Models\Admin\Productos;
 
-class Companies extends Model
+class PedidosDetalles extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'customers';
+    protected $table = 'pedidos_detalles';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name','address','phone','phone2','email'];
-
+    protected $fillable = ['pedido_id', 'producto_id', 'precio', 'cantidad', 'exento'];
 
     /**
     * Timestamps fields settings, use true if you need updated_at and create_at
@@ -32,8 +33,13 @@ class Companies extends Model
      *
      * @return QueryBuilder
      */
-    public function users()
+    public function pedidos()
     {
-        return $this->belongsToMany('App\Models\Admin\User');
+        return $this->belongsTo('App\Models\Admin\Pedidos');
+    }
+
+    public function productos()
+    {
+        return $this->hasOne('App\Models\Admin\Productos');
     }
 }

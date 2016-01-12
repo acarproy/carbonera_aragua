@@ -32,6 +32,18 @@ Route::group(['prefix' => config('admin.prefix'), 'middleware' => ['auth']], fun
 		    Route::resource('users', 'UserController');
 		    Route::get('users_show', array('as' => 'show', 'uses' => 'UserController@show'));
 
+		    //Cliente routes
+		    Route::resource('clientes', 'ClienteController');
+		    Route::get('clientes_show', array('as' => 'show', 'uses' => 'ClienteController@show'));
+
+		    //Producto routes
+		    Route::resource('productos', 'ProductoController');
+		    Route::get('productos_show', array('as' => 'show', 'uses' => 'ProductoController@show'));
+
+		    //ProductoCat routes
+		    Route::resource('productosCat', 'ProductoCatController');
+		    Route::get('productosCat_show', array('as' => 'show', 'uses' => 'ProductoCatController@show'));
+
 		    //Profile routes
 		    Route::get('profile',                    array( 'as' => 'admin.profile.index',           'uses' => 'ProfileController@index'));
 		    Route::get('profile/edit',               array( 'as' => 'admin.profile.edit',            'uses' => 'ProfileController@edit'));

@@ -29,7 +29,10 @@ class UserRequest extends Request
 
         return [
             'name'       => 'required|max:255',
+            'last'       => 'required|max:255',
+            'ci'         => 'required|max:12|min:8',
             'email'      => 'required|max:255|email|unique:users,email,'.$user_id,
+            'phone'      => 'required|max:11|min:11',
             'username'   => 'required|max:255|alpha_dash|unique:users,username,'.$user_id,
             'password'   => $password_rule,
             'avatar'     => 'mimes:jpeg,jpg,png'

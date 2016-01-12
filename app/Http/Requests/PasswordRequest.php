@@ -25,7 +25,7 @@ class PasswordRequest extends Request
     {
         return [
             'email'                => 'required|email',
-            'g-recaptcha-response' => 'required|captcha'
+            //'g-recaptcha-response' => 'required|captcha'
         ];
     }
 }
