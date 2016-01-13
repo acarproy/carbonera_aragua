@@ -35,6 +35,7 @@ Route::group(['prefix' => config('admin.prefix'), 'middleware' => ['auth']], fun
 		    //Cliente routes
 		    Route::resource('clientes', 'ClienteController');
 		    Route::get('clientes_show', array('as' => 'show', 'uses' => 'ClienteController@show'));
+		    Route::get('cargar_ciudades/{id}', array('as' => 'cargarCiudades', 'uses' => 'ClienteController@cargarCiudades'));
 
 		    //Producto routes
 		    Route::resource('productos', 'ProductoController');

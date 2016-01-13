@@ -89,15 +89,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @return QueryBuilder Object
      */
-    public function customers()
+    public function clientes()
     {
-        return $this->belongsToMany('App\Models\Admin\Customers');
+        return $this->hasOne('App\Models\Admin\Clientes');
     }
 
     public function hasRole($name)
     {
         foreach($this->roles as $role)
-            if($role->name == $name) return true;
+            if($role->role_title == $name) return true;
  
         return false;
     }
@@ -105,11 +105,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function assignRole($role)
     {
         return $this->roles()->attach($role);
-    }
-
-    public function assignCustomer($customer)
-    {
-        return $this->customers()->attach($customer);
     }
  
     public function removeRole($role)

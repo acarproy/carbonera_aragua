@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ClienteRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Clientes;
+use App\Models\Admin\VenEstados;
+use App\Models\Admin\VenCiudades;
 use Auth;
 use Hash;
 use Session;
@@ -35,9 +37,12 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        $clientes = new Clientes;
+        $clientes         = new Clientes;
+        $list_users       = ['' => 'Sin usuario asignado'] + $clientes->listUsers();
+        $list_venEstados  = ['' => 'Seleccione el estado'] + VenEstados::lists('estado', 'id_estado')->toArray();
+        $list_venCiudades = ['' => 'Seleccione la ciudad'] + VenCiudades::lists('ciudad', 'id_ciudad')->toArray();
         $route    = 'admin.clientes.store';
-        return View('admin.clientes.create')->with(compact('clientes', 'route'));
+        return View('admin.clientes.create')->with(compact('clientes','route','list_users','list_venEstados','list_venCiudades'));
     }
 
     /**
@@ -84,9 +89,12 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $clientes = Clientes::find($id);
+        $clientes         = Clientes::find($id);
+        $list_users       = ['' => 'Sin usuario asignado'] + $clientes->listUsers();
+        $list_venEstados  = ['' => 'Seleccione el estado'] + VenEstados::lists('estado', 'id_estado')->toArray();
+        $list_venCiudades = ['' => 'Seleccione la ciudad'] + VenCiudades::lists('ciudad', 'id_ciudad')->toArray();
         $action   = 'admin.clientes.update';
-        return View('admin.clientes.edit', compact('clientes','action'));
+        return View('admin.clientes.edit', compact('clientes','action','list_users','list_venEstados','list_venCiudades'));
     }
 
     /**
@@ -119,5 +127,9 @@ class ClienteController extends Controller
     {
         Clientes::find($id)->update(array('estatus' => 0));
         Session::flash('flash_message', 'Cliente desactivado exitosamente');
+    }
+
+    public function cargarCiudades($id) {
+        return VenCiudades::where('id_estado','=',$id)->lists('ciudad', 'id_ciudad')->toJson();
     }
 }

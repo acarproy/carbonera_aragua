@@ -12,7 +12,7 @@ class CreateUsersClientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_clientes', function(Blueprint $table)
+        Schema::create('clientes_user', function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
@@ -30,6 +30,6 @@ class CreateUsersClientesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users_clientes');
+        Schema::drop('clientes_user');
     }
 }

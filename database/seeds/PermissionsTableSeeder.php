@@ -444,6 +444,18 @@ class PermissionsTableSeeder extends Seeder
             	'created_at' => new \Carbon\Carbon(),
             	'updated_at' => new \Carbon\Carbon(),
 	    	],
+	    	[
+		    	'permission_title' => 'Cargar Ciudades',
+		    	'permission_slug' => 'App\Http\Controllers\Admin\Auth\ClienteController@cargarCiudades', 
+		    	'permission_description'=>'Cargar Ciudades',
+		    	'menu_show'=>'0',
+		    	'menu_module'=>'',
+		    	'menu_module_icon'=>'',
+		    	'menu_item'=>'',
+		    	'menu_item_route'=>'',
+            	'created_at' => new \Carbon\Carbon(),
+            	'updated_at' => new \Carbon\Carbon(),
+	    	],
 		    [
 		    	'permission_title' => 'Productos index',
 		    	'permission_slug' => 'App\Http\Controllers\Admin\Auth\ProductoController@index', 

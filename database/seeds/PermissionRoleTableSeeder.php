@@ -22,7 +22,7 @@ class PermissionRoleTableSeeder extends Seeder
         }
 
         //Client Role Permissions
-        foreach(range(9, 50) as $index) {
+        foreach(range(9, 51) as $index) {
             DB::table('permission_role')->insert([
                 'permission_id' => $index,
                 'role_id' => 2, 

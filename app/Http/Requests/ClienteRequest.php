@@ -33,6 +33,8 @@ class ClienteRequest extends Request
             'telefono2' => 'required|max:11|min:11',
             'correo'    => 'required|max:255|email|unique:users,email,'.$cliente_id,
             'direccion' => 'required|max:255',
+            'estado_id' => 'required',
+            'ciudad_id' => 'required',
             //'pais_id'   => 'required|max:11|min:11',
             //'ciudad_id' => 'required|max:11|min:11',
         ];
